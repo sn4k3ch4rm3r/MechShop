@@ -1,0 +1,22 @@
+.material-button .ripple-effect, .ripple .ripple-effect {
+	position: absolute;
+	background: white;
+	transform: translate(-50%, -50%);
+	pointer-events: none;
+	border-radius: 50%;
+	animation: ripple .7s linear infinite;
+}
+
+@keyframes ripple {
+	0% {
+		width: 0%;
+		height: 0%;
+		opacity: 40%;
+	}
+
+	100% {
+		width: 500px;
+		height: 500px;
+		opacity: 0;
+	}
+}

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" height="18" width="18" fill="#f175ff">
+	<defs>
+		<style>
+			.cover path {
+				stroke-dasharray: 21;
+				stroke-dashoffset: 21;
+				animation: check ease 0.3s forwards;
+			}
+			@keyframes check {
+				from {
+					stroke-dashoffset: 0;
+				}
+				to {
+					stroke-dashoffset: 21;
+				}
+			}
+
+		</style>
+	</defs>
+	<rect id="backgroundrect" width="100%" height="100%" x="0" y="0" fill="none" stroke="none"/>
+	
+	<g class="checkbox">
+		<path d="M0.02040803505350164,0.020407730694556037 h17.959183955480494 v17.959184887225952 H0.02040803505350164 z" fill="none" id="svg_1" class=""/>
+		<path d="M16,0 H2 c-1.11,0 -2,0.9 -2,2 v14 c0,1.1 0.8900000000000001,2 2,2 h14 c1.11,0 2,-0.9 2,-2 V2 c0,-1.1 -0.8900000000000001,-2 -2,-2 zm-9,14 l-5,-5 l1.4100000000000001,-1.4100000000000001 L7,11.17 l7.59,-7.59 L16,5 l-9,9 z" id="svg_2" class=""/>
+	</g>
+	<g class="cover">
+		<path fill="none" stroke="#f175ff" stroke-opacity="1" stroke-width="3" stroke-dasharray="none" stroke-linejoin="miter" stroke-linecap="butt" stroke-dashoffset="" fill-rule="nonzero" opacity="1" marker-start="" marker-mid="" marker-end="" id="svg_7" d="M16.10203,3.81633C15.28572,4.63265 7.04081,12.7143 6.87755,12.71429C6.71429,12.71428 2.79592,8.55102 2.30612,7.9796"/>
+	</g>
+</svg>

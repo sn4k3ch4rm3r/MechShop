@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="/stylesheets/ripple.css">
+		<link rel="stylesheet" href="/stylesheets/style.css">
+		<link rel="stylesheet" href="/stylesheets/button.css">
+		<link rel="stylesheet" href="/stylesheets/outlined-textfield.css">
+		<link rel="stylesheet" href="/stylesheets/checkbox.css">
+		<link rel="stylesheet" href="/stylesheets/shop.css">
+
+		<script src="/javascript/main.js"></script>
+
+		<title>MechShop</title>
+	</head>
+	<body class="preload">
+		<div class="content">
+			<div class="header">
+				<h3>MechShop</h3>
+				<div class="search">
+					<div class="material-outlined-textfield">
+						<input type="text" name="search" id="search" required>
+						<label for="search">
+							Keresés...
+						</label>
+					</div>
+					<button class="material-button">Mehet</button>
+				</div>
+				<img src="/images/cart.svg">
+			</div>
+			<div class="sidebar">
+				<h4>Szűrők</h4>
+				<div class="filter-group">
+					<h5>Csatlakozás</h5>
+					<label class="material-checkbox">
+						Vezetékes
+						<input type="checkbox" name="wired" id="wired">
+						<div class="display">
+							<div class="effect"></div>
+							<object>
+								<embed src="/images/checkbox.svg">
+							</object>
+						</div>
+					</label>
+					<label class="material-checkbox">
+						Rádofrekvenciás
+						<input type="checkbox" name="radio" id="radio">
+						<div class="display">
+							<div class="effect"></div>
+							<object>
+								<embed src="/images/checkbox.svg">
+							</object>
+						</div>
+					</label>
+					<label class="material-checkbox">
+						Bluetooth
+						<input type="checkbox" name="bluetooth" id="bluetooth">
+						<div class="display">
+							<div class="effect"></div>
+							<object>
+								<embed src="/images/checkbox.svg">
+							</object>
+						</div>
+					</label>
+				</div>
+				<div class="filter-group">
+					<h5>Méret</h5>
+					<label class="material-checkbox">
+						100% / Teljes méret
+						<input type="checkbox" name="full" id="full">
+						<div class="display">
+							<div class="effect"></div>
+							<object>
+								<embed src="/images/checkbox.svg">
+							</object>
+						</div>
+					</label>
+					<label class="material-checkbox">
+						80% / Tenkeyless
+						<input type="checkbox" name="tkl" id="tkl">
+						<div class="display">
+							<div class="effect"></div>
+							<object>
+								<embed src="/images/checkbox.svg">
+							</object>
+						</div>
+					</label>
+					<label class="material-checkbox">
+						75%
+						<input type="checkbox" name="compact" id="compact">
+						<div class="display">
+							<div class="effect"></div>
+							<object>
+								<embed src="/images/checkbox.svg">
+							</object>
+						</div>
+					</label>
+					<label class="material-checkbox">
+						60%
+						<input type="checkbox" name="compacter" id="compacter">
+						<div class="display">
+							<div class="effect"></div>
+							<object>
+								<embed src="/images/checkbox.svg">
+							</object>
+						</div>
+					</label>
+				</div>
+				<div class="filter-group">
+					<h5>Egyéb</h5>
+					<label class="material-checkbox">
+						Háttérvilágítás
+						<input type="checkbox" name="backlit" id="backlit">
+						<div class="display">
+							<div class="effect"></div>
+							<object>
+								<embed src="/images/checkbox.svg">
+							</object>
+						</div>
+					</label>
+					<label class="material-checkbox">
+						Multimédia gombok
+						<input type="checkbox" name="mediakeys" id="mediakeys">
+						<div class="display">
+							<div class="effect"></div>
+							<object>
+								<embed src="/images/checkbox.svg">
+							</object>
+						</div>
+					</label>
+				</div>
+				<button class="material-button" id="filter-btn">Alkalmaz</button>
+			</div>
+			<div class="product-list">
+				<div class="product ripple">
+					<img src="/images/demoboard.webp">
+					<h5>KBD75 V2</h5>
+					<p class="subtitle1">85 500 Ft</p>
+					<div class="description">
+						<p class="body2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac interdum est. Pellentesque quis nibh eros. Quisque convallis at est eget molestie. Sed convallis dictum metus. Sed sed purus pellentesque, pharetra purus sit amet, tristique libero. Vivamus lectus odio, ornare eu velit vitae, interdum rhoncus purus. Aliquam pellentesque tincidunt leo ut hendrerit. Nulla justo mauris, malesuada posuere varius ut, blandit eleifend erat. Duis lacus felis, euismod sed rhoncus sed, posuere ac arcu. Sed vel placerat augue.</p>
+					</div>
+				</div>
+				<div class="product ripple">
+					<img src="/images/demoboard.webp">
+					<h5>KBD75 V2</h5>
+					<p class="subtitle1">85 500 Ft</p>
+					<div class="description">
+						<p class="body2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac interdum est. Pellentesque quis nibh eros. Quisque convallis at est eget molestie. Sed convallis dictum metus. Sed sed purus pellentesque, pharetra purus sit amet, tristique libero. Vivamus lectus odio, ornare eu velit vitae, interdum rhoncus purus. Aliquam pellentesque tincidunt leo ut hendrerit. Nulla justo mauris, malesuada posuere varius ut, blandit eleifend erat. Duis lacus felis, euismod sed rhoncus sed, posuere ac arcu. Sed vel placerat augue.</p>
+					</div>
+				</div>
+				<div class="product ripple">
+					<img src="/images/demoboard.webp">
+					<h5>KBD75 V2</h5>
+					<p class="subtitle1">85 500 Ft</p>
+					<div class="description">
+						<p class="body2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac interdum est. Pellentesque quis nibh eros. Quisque convallis at est eget molestie. Sed convallis dictum metus. Sed sed purus pellentesque, pharetra purus sit amet, tristique libero. Vivamus lectus odio, ornare eu velit vitae, interdum rhoncus purus. Aliquam pellentesque tincidunt leo ut hendrerit. Nulla justo mauris, malesuada posuere varius ut, blandit eleifend erat. Duis lacus felis, euismod sed rhoncus sed, posuere ac arcu. Sed vel placerat augue.</p>
+					</div>
+				</div>
+				<div class="product ripple">
+					<img src="/images/demoboard.webp">
+					<h5>KBD75 V2</h5>
+					<p class="subtitle1">85 500 Ft</p>
+					<div class="description">
+						<p class="body2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac interdum est. Pellentesque quis nibh eros. Quisque convallis at est eget molestie. Sed convallis dictum metus. Sed sed purus pellentesque, pharetra purus sit amet, tristique libero. Vivamus lectus odio, ornare eu velit vitae, interdum rhoncus purus. Aliquam pellentesque tincidunt leo ut hendrerit. Nulla justo mauris, malesuada posuere varius ut, blandit eleifend erat. Duis lacus felis, euismod sed rhoncus sed, posuere ac arcu. Sed vel placerat augue.</p>
+					</div>
+				</div>
+				<div class="product ripple">
+					<img src="/images/demoboard.webp">
+					<h5>KBD75 V2</h5>
+					<p class="subtitle1">85 500 Ft</p>
+					<div class="description">
+						<p class="body2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac interdum est. Pellentesque quis nibh eros. Quisque convallis at est eget molestie. Sed convallis dictum metus. Sed sed purus pellentesque, pharetra purus sit amet, tristique libero. Vivamus lectus odio, ornare eu velit vitae, interdum rhoncus purus. Aliquam pellentesque tincidunt leo ut hendrerit. Nulla justo mauris, malesuada posuere varius ut, blandit eleifend erat. Duis lacus felis, euismod sed rhoncus sed, posuere ac arcu. Sed vel placerat augue.</p>
+					</div>
+				</div>
+				<div class="product ripple">
+					<img src="/images/demoboard.webp">
+					<h5>KBD75 V2</h5>
+					<p class="subtitle1">85 500 Ft</p>
+					<div class="description">
+						<p class="body2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac interdum est. Pellentesque quis nibh eros. Quisque convallis at est eget molestie. Sed convallis dictum metus. Sed sed purus pellentesque, pharetra purus sit amet, tristique libero. Vivamus lectus odio, ornare eu velit vitae, interdum rhoncus purus. Aliquam pellentesque tincidunt leo ut hendrerit. Nulla justo mauris, malesuada posuere varius ut, blandit eleifend erat. Duis lacus felis, euismod sed rhoncus sed, posuere ac arcu. Sed vel placerat augue.</p>
+					</div>
+				</div>
+				<div class="product ripple">
+					<img src="/images/demoboard.webp">
+					<h5>KBD75 V2</h5>
+					<p class="subtitle1">85 500 Ft</p>
+					<div class="description">
+						<p class="body2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac interdum est. Pellentesque quis nibh eros. Quisque convallis at est eget molestie. Sed convallis dictum metus. Sed sed purus pellentesque, pharetra purus sit amet, tristique libero. Vivamus lectus odio, ornare eu velit vitae, interdum rhoncus purus. Aliquam pellentesque tincidunt leo ut hendrerit. Nulla justo mauris, malesuada posuere varius ut, blandit eleifend erat. Duis lacus felis, euismod sed rhoncus sed, posuere ac arcu. Sed vel placerat augue.</p>
+					</div>
+				</div>
+				<div class="product ripple">
+					<img src="/images/demoboard.webp">
+					<h5>KBD75 V2</h5>
+					<p class="subtitle1">85 500 Ft</p>
+					<div class="description">
+						<p class="body2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac interdum est. Pellentesque quis nibh eros. Quisque convallis at est eget molestie. Sed convallis dictum metus. Sed sed purus pellentesque, pharetra purus sit amet, tristique libero. Vivamus lectus odio, ornare eu velit vitae, interdum rhoncus purus. Aliquam pellentesque tincidunt leo ut hendrerit. Nulla justo mauris, malesuada posuere varius ut, blandit eleifend erat. Duis lacus felis, euismod sed rhoncus sed, posuere ac arcu. Sed vel placerat augue.</p>
+					</div>
+				</div>
+				<div class="product ripple">
+					<img src="/images/demoboard.webp">
+					<h5>KBD75 V2</h5>
+					<p class="subtitle1">85 500 Ft</p>
+					<div class="description">
+						<p class="body2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac interdum est. Pellentesque quis nibh eros. Quisque convallis at est eget molestie. Sed convallis dictum metus. Sed sed purus pellentesque, pharetra purus sit amet, tristique libero. Vivamus lectus odio, ornare eu velit vitae, interdum rhoncus purus. Aliquam pellentesque tincidunt leo ut hendrerit. Nulla justo mauris, malesuada posuere varius ut, blandit eleifend erat. Duis lacus felis, euismod sed rhoncus sed, posuere ac arcu. Sed vel placerat augue.</p>
+					</div>
+				</div>
+				<div class="product ripple">
+					<img src="/images/demoboard.webp">
+					<h5>KBD75 V2</h5>
+					<p class="subtitle1">85 500 Ft</p>
+					<div class="description">
+						<p class="body2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac interdum est. Pellentesque quis nibh eros. Quisque convallis at est eget molestie. Sed convallis dictum metus. Sed sed purus pellentesque, pharetra purus sit amet, tristique libero. Vivamus lectus odio, ornare eu velit vitae, interdum rhoncus purus. Aliquam pellentesque tincidunt leo ut hendrerit. Nulla justo mauris, malesuada posuere varius ut, blandit eleifend erat. Duis lacus felis, euismod sed rhoncus sed, posuere ac arcu. Sed vel placerat augue.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="/javascript/ripple.js"></script>
+	</body>
+</html>

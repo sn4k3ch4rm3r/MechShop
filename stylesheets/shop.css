@@ -1,0 +1,141 @@
+body {
+	margin: 0;
+}
+
+.content{
+	display: grid;
+	grid-template-columns: 300px auto;
+	grid-template-rows: 70px auto;
+}
+
+.header {
+	background: var(--menus);
+	position: fixed;
+	z-index: 100;
+	height: 70px;
+	width: 100vw;
+	filter: drop-shadow(0 3px 6px #0005);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	box-sizing: border-box;
+	padding: 10px;
+	padding-right: 0;
+}
+
+.search {
+	margin-bottom: 15px;
+	width: 50%;
+	position: relative;
+}
+
+.search .material-outlined-textfield {
+	width: 86%;
+}
+
+.search .material-button {
+	width: 15%;
+	height: 40px;
+	position: absolute;
+	right: 0;
+	top:15px;
+}
+
+.search .material-outlined-textfield label {
+	background: var(--menus);
+}
+
+.header img {
+	height: 40px;
+	padding: 15px;
+	transition: all ease 0.3s; 
+	cursor: pointer;
+}
+
+.header img:hover {
+	background-color: #fffa;
+}
+
+.sidebar {
+	width: 300px;
+	padding: 10px;
+	float: left;
+	height: calc(100vh - 70px);
+	background-color: var(--menus);
+	top: 70px;
+	position: fixed;
+	box-sizing: border-box;
+	grid-column: 1;
+	grid-row: 2;
+}
+.sidebar h4 {
+	margin: 15px 0 0 0;
+}
+
+.sidebar h5 {
+	margin: 15px 0 15px 0;
+}
+
+.filter-group {
+	border-bottom: 1px solid #fff1;
+}
+
+#filter-btn {
+	margin-top: 15px;
+	left:calc(50% - 10px);
+	transform: translateX(-50%);
+}
+
+.product-list {
+	display: flex;
+	flex-wrap: wrap;
+	float: right;
+	justify-content: center;
+	flex: 1;
+	grid-column: 2;
+	grid-row: 2;
+	height: calc(100vh - 70px);
+	overflow-y: scroll;
+}
+
+.product {
+	border-radius: 5px;
+	background: var(--dark-accent);
+	width: 250px;
+	height: 370px;
+	overflow: hidden;
+	filter: drop-shadow(0 3px 4px #0005);
+	margin: 10px;
+	cursor: pointer;
+	display: inline-block;
+	transition: all ease 0.3s;
+	position: relative;
+}
+
+.product * {
+	pointer-events: none;
+}
+
+.product img {
+	width: 100%;
+}
+.product span {
+	z-index: -100;
+}
+
+.product h5, .subtitle1, .body2 {
+	margin: 5px;
+	margin-bottom: 0;
+}
+
+.product .body2 {
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.product:hover {
+	transform: translateY(-10px);
+	filter: drop-shadow(0 13px 7px #0005);
+}
