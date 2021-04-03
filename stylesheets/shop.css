@@ -88,14 +88,39 @@ body {
 
 .product-list {
 	display: flex;
-	flex-wrap: wrap;
 	float: right;
 	justify-content: center;
-	flex: 1;
 	grid-column: 2;
 	grid-row: 2;
 	height: calc(100vh - 70px);
 	overflow-y: scroll;
+}
+
+@media screen and (max-width: 869px) {
+	.list-container {
+		width: 270px;
+	}
+}
+
+@media screen and (min-width: 870px) and (max-width: 1139px) {
+	.list-container {
+		width: 544px;
+	}
+}
+@media screen and (min-width: 1140px) and (max-width: 1409px) {
+	.list-container {
+		width: 818px;
+	}
+}
+@media screen and (min-width: 1410px) and (max-width: 1699px){
+	.list-container {
+		width: 1092px;
+	}
+}
+@media screen and (min-width: 1700px) {
+	.list-container {
+		width: 1366px;
+	}
 }
 
 .product {
