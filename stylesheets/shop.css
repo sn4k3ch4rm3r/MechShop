@@ -67,6 +67,7 @@ body {
 	box-sizing: border-box;
 	grid-column: 1;
 	grid-row: 2;
+	overflow: auto;
 }
 .sidebar h4 {
 	margin: 15px 0 0 0;

@@ -11,7 +11,6 @@ rippleElements.forEach(element => {
 		ripple.style.top = `${y}px`;
 		ripple.classList.add('ripple-effect');
 		this.appendChild(ripple);
-		console.log(`x = ${x}; y = ${y}`);
 		setTimeout(() => {
 			ripple.remove();
 		}, 700)

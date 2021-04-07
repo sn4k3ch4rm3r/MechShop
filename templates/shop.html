@@ -21,118 +21,135 @@
 			<div class="header">
 				<h3>MechShop</h3>
 				<div class="search">
-					<div class="material-outlined-textfield">
-						<input type="text" name="search" id="search" required>
-						<label for="search">
-							Keresés...
-						</label>
-					</div>
-					<button class="material-button">Mehet</button>
+					<form action="/templates/shop.html" method="GET">
+						<div class="material-outlined-textfield">
+							<input type="text" name="q" id="search" required>
+							<label for="search">
+								Keresés...
+							</label>
+						</div>
+						<button class="material-button">Mehet</button>
+					</form>
 				</div>
-				<img src="/images/cart.svg">
+				<div class="icons">
+					<a href="/profile/"><img src="/images/profile.svg"></a>
+					<a href="/cart"><img src="/images/cart.svg"></a>
+				</div>
 			</div>
 			<div class="sidebar">
 				<h4>Szűrők</h4>
-				<div class="filter-group">
-					<h5>Csatlakozás</h5>
-					<label class="material-checkbox">
-						Vezetékes
-						<input type="checkbox" name="wired" id="wired">
-						<div class="display">
-							<div class="effect"></div>
-							<object>
-								<embed src="/images/checkbox.svg">
-							</object>
-						</div>
-					</label>
-					<label class="material-checkbox">
-						Rádofrekvenciás
-						<input type="checkbox" name="radio" id="radio">
-						<div class="display">
-							<div class="effect"></div>
-							<object>
-								<embed src="/images/checkbox.svg">
-							</object>
-						</div>
-					</label>
-					<label class="material-checkbox">
-						Bluetooth
-						<input type="checkbox" name="bluetooth" id="bluetooth">
-						<div class="display">
-							<div class="effect"></div>
-							<object>
-								<embed src="/images/checkbox.svg">
-							</object>
-						</div>
-					</label>
-				</div>
-				<div class="filter-group">
-					<h5>Méret</h5>
-					<label class="material-checkbox">
-						100% / Teljes méret
-						<input type="checkbox" name="full" id="full">
-						<div class="display">
-							<div class="effect"></div>
-							<object>
-								<embed src="/images/checkbox.svg">
-							</object>
-						</div>
-					</label>
-					<label class="material-checkbox">
-						80% / Tenkeyless
-						<input type="checkbox" name="tkl" id="tkl">
-						<div class="display">
-							<div class="effect"></div>
-							<object>
-								<embed src="/images/checkbox.svg">
-							</object>
-						</div>
-					</label>
-					<label class="material-checkbox">
-						75%
-						<input type="checkbox" name="compact" id="compact">
-						<div class="display">
-							<div class="effect"></div>
-							<object>
-								<embed src="/images/checkbox.svg">
-							</object>
-						</div>
-					</label>
-					<label class="material-checkbox">
-						60%
-						<input type="checkbox" name="compacter" id="compacter">
-						<div class="display">
-							<div class="effect"></div>
-							<object>
-								<embed src="/images/checkbox.svg">
-							</object>
-						</div>
-					</label>
-				</div>
-				<div class="filter-group">
-					<h5>Egyéb</h5>
-					<label class="material-checkbox">
-						Háttérvilágítás
-						<input type="checkbox" name="backlit" id="backlit">
-						<div class="display">
-							<div class="effect"></div>
-							<object>
-								<embed src="/images/checkbox.svg">
-							</object>
-						</div>
-					</label>
-					<label class="material-checkbox">
-						Multimédia gombok
-						<input type="checkbox" name="mediakeys" id="mediakeys">
-						<div class="display">
-							<div class="effect"></div>
-							<object>
-								<embed src="/images/checkbox.svg">
-							</object>
-						</div>
-					</label>
-				</div>
-				<button class="material-button" id="filter-btn">Alkalmaz</button>
+				<form method="GET">
+					<div class="filter-group">
+						<h5>Csatlakozás</h5>
+						<label class="material-checkbox">
+							Vezetékes
+							<input type="checkbox" name="wired" id="wired">
+							<div class="display">
+								<div class="effect"></div>
+								<object>
+									<embed src="/images/checkbox.svg">
+								</object>
+							</div>
+						</label>
+						<label class="material-checkbox">
+							Rádiofrekvenciás
+							<input type="checkbox" name="radio" id="radio">
+							<div class="display">
+								<div class="effect"></div>
+								<object>
+									<embed src="/images/checkbox.svg">
+								</object>
+							</div>
+						</label>
+						<label class="material-checkbox">
+							Bluetooth
+							<input type="checkbox" name="bluetooth" id="bluetooth">
+							<div class="display">
+								<div class="effect"></div>
+								<object>
+									<embed src="/images/checkbox.svg">
+								</object>
+							</div>
+						</label>
+					</div>
+					<div class="filter-group">
+						<h5>Méret</h5>
+						<label class="material-checkbox">
+							100% / Teljes méret
+							<input type="checkbox" name="full" id="full">
+							<div class="display">
+								<div class="effect"></div>
+								<object>
+									<embed src="/images/checkbox.svg">
+								</object>
+							</div>
+						</label>
+						<label class="material-checkbox">
+							80% / Tenkeyless
+							<input type="checkbox" name="tkl" id="tkl">
+							<div class="display">
+								<div class="effect"></div>
+								<object>
+									<embed src="/images/checkbox.svg">
+								</object>
+							</div>
+						</label>
+						<label class="material-checkbox">
+							75%
+							<input type="checkbox" name="compact" id="compact">
+							<div class="display">
+								<div class="effect"></div>
+								<object>
+									<embed src="/images/checkbox.svg">
+								</object>
+							</div>
+						</label>
+						<label class="material-checkbox">
+							60%
+							<input type="checkbox" name="compacter" id="compacter">
+							<div class="display">
+								<div class="effect"></div>
+								<object>
+									<embed src="/images/checkbox.svg">
+								</object>
+							</div>
+						</label>
+						<label class="material-checkbox">
+							Numpad
+							<input type="checkbox" name="numpad" id="numpad">
+							<div class="display">
+								<div class="effect"></div>
+								<object>
+									<embed src="/images/checkbox.svg">
+								</object>
+							</div>
+						</label>
+					</div>
+					<div class="filter-group">
+						<h5>Egyéb</h5>
+						<label class="material-checkbox">
+							Háttérvilágítás
+							<input type="checkbox" name="backlit" id="backlit">
+							<div class="display">
+								<div class="effect"></div>
+								<object>
+									<embed src="/images/checkbox.svg">
+								</object>
+							</div>
+						</label>
+						<label class="material-checkbox">
+							Multimédia gombok
+							<input type="checkbox" name="mediakeys" id="mediakeys">
+							<div class="display">
+								<div class="effect"></div>
+								<object>
+									<embed src="/images/checkbox.svg">
+								</object>
+							</div>
+						</label>
+					</div>
+					<button class="material-button" id="filter-btn">Alkalmaz</button>
+				</form>
 			</div>
 			<div class="product-list">
 				<div class="list-container">
