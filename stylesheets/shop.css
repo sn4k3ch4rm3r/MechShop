@@ -8,54 +8,6 @@ body {
 	grid-template-rows: 70px auto;
 }
 
-.header {
-	background: var(--menus);
-	position: fixed;
-	z-index: 100;
-	height: 70px;
-	width: 100vw;
-	filter: drop-shadow(0 3px 6px #0005);
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	box-sizing: border-box;
-	padding: 10px;
-	padding-right: 0;
-}
-
-.search {
-	margin-bottom: 15px;
-	width: 50%;
-	position: relative;
-}
-
-.search .material-outlined-textfield {
-	width: 86%;
-}
-
-.search .material-button {
-	width: 15%;
-	height: 40px;
-	position: absolute;
-	right: 0;
-	top:15px;
-}
-
-.search .material-outlined-textfield label {
-	background: var(--menus);
-}
-
-.header img {
-	height: 40px;
-	padding: 15px;
-	transition: all ease 0.3s; 
-	cursor: pointer;
-}
-
-.header img:hover {
-	background-color: #fffa;
-}
-
 .sidebar {
 	width: 300px;
 	padding: 10px;
@@ -138,13 +90,19 @@ body {
 	position: relative;
 }
 
+a {
+	text-decoration: none;
+}
+
 .product * {
 	pointer-events: none;
+	color: var(--text);
 }
 
 .product img {
 	width: 100%;
 }
+
 .product span {
 	z-index: -100;
 }
