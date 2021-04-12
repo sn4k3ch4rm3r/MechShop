@@ -23,10 +23,14 @@
 	font-family: Roboto;
 }
 
+.material-outlined-textfield ::placeholder {
+	opacity: 0;
+}
+
 .material-outlined-textfield input:-webkit-autofill {
 	-webkit-text-fill-color: white;
-	-webkit-box-shadow: 0 0 0px 1000px #fff1 inset;
-	box-shadow: 0 0 0px 1000px #fff1 inset;
+	-webkit-box-shadow: 0 0 0px 1000px #0000 inset;
+	box-shadow: 0 0 0px 1000px #0000 inset;
 	transition: background-color 5000s ease-in-out 0s;
 }
 
@@ -41,15 +45,15 @@
 	margin-left: var(--textbox-padding);
 	transition: all 0.3s ease;
 	pointer-events: none;
-	background-color: var(--background);
 }
 
 .material-outlined-textfield input:focus + label,
-.material-outlined-textfield input:valid + label
+.material-outlined-textfield input:not(:placeholder-shown) + label
 {
 	transform: translate(-5px, -28px);
 	padding-inline: 5px;
 	font-size: 11px;
+	background-color: var(--background);
 }
 
 .material-outlined-textfield input:focus + label {
@@ -63,4 +67,16 @@
 .material-outlined-textfield input:focus {
 	border-color: var(--primary-accent);
 	border-width: 2px;
+}
+
+.material-outlined-textfield input:focus::placeholder {
+	opacity: 100%;
+}
+
+.material-outlined-textfield input.invalid {
+	border: 2px solid var(--error);
+}
+
+.material-outlined-textfield input.invalid + label {
+	color: var(--error-text);
 }
