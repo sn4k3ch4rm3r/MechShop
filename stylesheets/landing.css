@@ -1,6 +1,6 @@
 .container {
 	background:
-		linear-gradient(0, #29067E99, #29067E99), 
+		linear-gradient(0, #29067E99, #29067E99),
 		url("/images/landing-bg.png") no-repeat center center fixed;
 	width: 100vw;
 	height: 100vh;
@@ -22,7 +22,7 @@ form {
 	position: relative;
 	left: 50%;
 	transform: translateX(-50%);
-	padding: 20px 40px 30px 40px;
+	padding: 20px 40px 30px;
 	border-radius: 5px;
 	filter: drop-shadow(0 3px 4px #0005);
 	box-sizing: border-box;
@@ -51,7 +51,7 @@ form h2 {
 }
 
 form .material-outlined-textfield, form .material-button{
-	width: 100%;	
+	width: 100%;
 }
 
 .postcode, .city {
