@@ -1,7 +1,3 @@
-body {
-	margin: 0;
-}
-
 .content{
 	display: grid;
 	grid-template-columns: 300px auto;

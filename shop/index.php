@@ -8,7 +8,6 @@
 	');
 	$template->set("title", "Vásárlás");
 	$shop_template = new Template($_SERVER['DOCUMENT_ROOT']."/templates/shop.html");
-	$shop_template->set("navbar", file_get_contents($_SERVER['DOCUMENT_ROOT']."/templates/navbar.html"));
 	
 	$cards = "";
 
@@ -18,7 +17,7 @@
 	foreach($products as $product) {
 		$card = new Template($_SERVER['DOCUMENT_ROOT']."/templates/product-card.html");
 		$card->set("name", $product["displayname"]);
-		$card->set("price", $product["price"]);
+		$card->set("price", number_format($product['price'], 0, ",", " "));
 		$card->set("description", $product["description"]);
 		$card->set("slug", $product["slug"]);
 		$cards .= $card->toString(); 

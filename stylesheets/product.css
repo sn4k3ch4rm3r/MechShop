@@ -1,0 +1,143 @@
+.content {
+	padding: 30px 30px 0 30px;
+	overflow: auto;
+	box-sizing: border-box;
+	height: calc(100vh - 70px);
+	display: grid;
+	grid-template-columns: 530px auto;
+}
+
+.preview {
+	position: relative;
+	width: 500px;
+	height: 500px;
+	background-color: white;
+	float: left;
+	margin-right: 30px;
+}
+
+.preview img {
+	width: inherit;
+	position: absolute;
+	top:50%;
+	transform: translateY(-50%);
+}
+
+.info h3 {
+	margin: 10px 0 10px 0;
+}
+
+h2 {
+	margin: -15px 0 10px 0;
+}
+
+.overline {
+	margin-bottom: 0;
+}
+
+.number-picker {
+	height: 40px;
+	display: inline-block;
+	border-radius: 5px;
+	border: 1px solid var(--input-border);
+	box-sizing: border-box;
+}
+
+.number-picker:focus-within {
+	border-color: var(--primary-accent);
+}
+
+.number-picker:focus-within > .amount-input {
+	border-color: var(--primary-accent);
+}
+
+.number-picker * {
+	height: 100%;
+	width: 40px;
+	padding: 0;
+	margin:0;
+	box-sizing: border-box;
+	text-align: center;
+	border: none;
+	background: transparent;
+	outline: none;
+	color: var(--text);
+}
+
+.number-picker .amount-input {
+	border: 1px solid var(--input-border);
+	border-style: none solid;
+	margin-inline: -5px;
+}
+
+.number-picker button {
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.number-picker *:hover {
+	background: #ffffff05;
+}
+
+.material-button {
+	height: 40px;
+	padding-inline: 20px;
+	margin-left: 10px;
+}
+
+.accordion {
+	width: 100%;
+	margin-top: 20px;
+	border-radius: 5px;
+	overflow: hidden;
+	background: var(--secondary-accent);
+}
+
+.accordion label {
+	padding: 14px 20px;
+	font-family: 'Roboto Medium';
+	display: block;
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+	border-bottom: 1px solid #0002;
+	user-select: none;
+}
+
+.accordion label:hover {
+	background: #0001;
+}
+
+.accordion label::after {
+	content: "";
+	width: 0; 
+	height: 0; 
+	border: 6px solid transparent;
+	border-top-color: var(--input-border);
+	position: absolute;
+	top: 50%;
+	right: 20px;
+	transition: all 0.3s ease;
+}
+
+.accordion-content {
+	background: var(--menus);
+	padding: 0 20px;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.5s ease;
+}
+
+.accordion input {
+	display: none;
+}
+
+.accordion input:checked ~ .accordion-content {
+	max-height: 100vh;
+	/* overflow: auto; */
+}
+
+.accordion input:checked ~ label::after {
+	transform: translateY(-75%) rotate(0.5turn);
+}

@@ -6,6 +6,7 @@
 
 		function __construct($template) {
 			$this->template = file_get_contents($template);
+			$this->set("navbar", file_get_contents($_SERVER['DOCUMENT_ROOT']."/templates/navbar.html"));
 		}
 
 		function set($key, $value) {

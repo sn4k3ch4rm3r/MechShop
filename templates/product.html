@@ -1,0 +1,47 @@
+{{navbar}}
+<div class="content">
+	<div class="preview"><img src="/images/boards/{{slug}}/main.jpg"></div>
+	<div class="info">
+		<h2>{{name}}</h2>
+		<h3>{{price}} Ft</h3>
+		<form>
+			<p class="overline">Mennyiség:</p>
+			<div class="number-picker">
+				<button type="button" class="ripple" onclick="dec()">-</button>
+				<input type="number" id="amount" class="amount-input" value="1" min=1 max=100>
+				<button type="button" class="ripple" onclick="inc()">+</button>
+			</div>
+			<button type="button" id="add-cart" class="material-button">Kosárba</button>
+		</form>
+		<div class="accordion">
+			<div>
+				<input type="checkbox" name="specs" id="description">
+				<label for="description" class="ripple">Leírás</label>
+				<div class="accordion-content">
+					<p class="body1">{{description}}</p>
+				</div>
+			</div>
+			<div>
+				<input type="checkbox" name="specs" id="spec-table">
+				<label for="spec-table" class="ripple">Specifikáció</label>
+				<div class="accordion-content">
+					<p class="body1">Specifikációs táblázat helye</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	const amount = document.getElementById('amount');
+
+	function dec() {
+		if (amount.value>1) {
+			amount.value--;
+		}
+	}
+	function inc() {
+		if (amount.value < 99) {
+			amount.value ++;
+		}
+	}
+</script>
