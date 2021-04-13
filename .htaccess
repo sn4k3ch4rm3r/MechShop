@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule ^shop/(?!product\.php)(.*)$ shop/product.php?slug=$1

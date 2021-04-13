@@ -99,7 +99,17 @@ a {
 	color: var(--text);
 }
 
+.product .img-wrapper {
+	position: relative;
+	width: 100%;
+	padding-top: 100%;
+	background-color: white;
+}
+
 .product img {
+	position: absolute;
+	top:50%;
+	transform: translateY(-50%);
 	width: 100%;
 }
 
@@ -110,6 +120,12 @@ a {
 .product h5, .subtitle1, .body2 {
 	margin: 5px;
 	margin-bottom: 0;
+}
+
+.product h5 {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .product .body2 {
