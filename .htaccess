@@ -1,2 +1,3 @@
 RewriteEngine on
-RewriteRule ^shop/(?!product\.php)(.*)$ shop/product.php?slug=$1
+RewriteRule ^shop/$ shop/index.php
+RewriteRule ^shop/(?!(.*)\.php)(.*)$ shop/product.php?slug=$2
