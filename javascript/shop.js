@@ -52,7 +52,7 @@ function applyFilter() {
 		if (value.checked) {
 			conn.push(key);
 		}
-	};
+	}
 	if (conn.length > 0) params["connection"] = conn;
 	
 	let s = [];
@@ -60,7 +60,7 @@ function applyFilter() {
 		if (value.checked) {
 			s.push(key);
 		}
-	};
+	}
 	if (s.length > 0) params["size"] = s;
 
 	let extra = [];
@@ -68,7 +68,7 @@ function applyFilter() {
 		if (value.checked) {
 			extra.push(key);
 		}
-	};
+	}
 	if (extra.length > 0) params["extras"] = extra;
 	
 	let filterParams = new URLSearchParams(params).toString();
