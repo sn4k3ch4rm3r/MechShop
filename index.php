@@ -11,7 +11,7 @@
 		$_SESSION['city'] = $_POST["city"];
 		$_SESSION['address'] = $_POST["address"];
 
-		header("Location: /shop.php");
+		header("Location: /shop/");
 	}
 	else {
 		require_once("helpers/template.php");

@@ -92,6 +92,7 @@ h2 {
 	border-radius: 5px;
 	overflow: hidden;
 	background: var(--secondary-accent);
+	filter: drop-shadow(0, 3px 1px #000a);
 }
 
 .accordion label {
@@ -123,10 +124,31 @@ h2 {
 
 .accordion-content {
 	background: var(--menus);
-	padding: 0 20px;
 	max-height: 0;
 	overflow: hidden;
 	transition: max-height 0.5s ease;
+}
+
+.accordion-content * {
+	padding: 0 20px;
+}
+
+.accordion-content table{
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.accordion-content td {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	width: 50%;
+}
+.accordion-content td:last-child {
+	padding-left: 0;
+}
+
+.accordion-content tr:nth-child(even) {
+	background-color: #fff2;
 }
 
 .accordion input {
