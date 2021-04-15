@@ -1,7 +1,5 @@
 <?php
 	if ($_SERVER["REQUEST_METHOD"] === "POST") {
-		print_r($_POST);
-
 		session_start();
 
 		$_SESSION['name'] = $_POST["name"];
@@ -14,14 +12,8 @@
 		header("Location: /shop/");
 	}
 	else {
-		require_once("helpers/template.php");
-		$template = new Template("templates/base.html");
-		$template->set("imports", '
-			<link rel="stylesheet" href="/stylesheets/landing.css">
-			<script src="/javascript/landing.js"></script>
-		');
-		$template->set("title", "Kezdőlap");
-		$template->set("body", file_get_contents("templates/landing.html"));
+		require_once($_SERVER["DOCUMENT_ROOT"]."/helpers/template.php");
+		$template = new Template($_SERVER["DOCUMENT_ROOT"]."/templates/landing.html");
 		$template->render();
 	}
 ?>

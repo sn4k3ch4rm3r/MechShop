@@ -17,12 +17,12 @@
 
 		<script src="/javascript/main.js"></script>
 
-		{{ imports }}
+		{% block imports %}{% endblock imports %}	
 
-		<title>{{ title }} | MechShop</title>
+		<title>{% block title %}{% endblock title %} | MechShop</title>
 	</head>
 	<body>
-		{{ body }}
+		{% block body %}{% endblock body %}
 		<script src="/javascript/ripple.js"></script>
 	</body>
 </html>

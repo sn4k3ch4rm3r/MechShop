@@ -1,33 +1,27 @@
 <?php
-	require_once($_SERVER['DOCUMENT_ROOT'].'/helpers/template.php');
-	require_once($_SERVER['DOCUMENT_ROOT'].'/helpers/dbhandler.php');
-
-	$template = new Template($_SERVER['DOCUMENT_ROOT'].'/templates/base.html');
-	$template->set('imports', '
-		<link rel="stylesheet" href="/stylesheets/product.css">
-	');
+	require_once($_SERVER["DOCUMENT_ROOT"]."/helpers/template.php");
+	require_once($_SERVER["DOCUMENT_ROOT"]."/helpers/dbhandler.php");
 	
-	$product_template = new Template($_SERVER['DOCUMENT_ROOT'].'/templates/product.html');
 	$dbhandler = new DBHandler();
-	$details = $dbhandler->product_details($_GET['slug'])[0];
+	$details = $dbhandler->product_details($_GET["slug"])[0];
 
-	$template->set('title', $details['displayname']);
-	$product_template->set('name', $details['displayname']);
-	$product_template->set('slug', $details['slug']);
-	$product_template->set('price', number_format($details['price'], 0, ",", " "));
-	$product_template->set('description', preg_replace("~(<br>){2,}~", "<br><br>", str_replace("\n", "<br>", $details['description'])));
-	$product_template->set('usb', $details['usb']);
-	$bt = $details['bluetooth'] == 1 ? 'Igen' : 'Nem';
-	$product_template->set('bluetooth', $bt);
-	$product_template->set('backlight', $details['backlight']);
-	$medkeys = $details['mediakeys'] == 1 ? 'Igen' : 'Nem';
-	$product_template->set('mediakeys', $medkeys);
-	$size = $details['size'] == 10 ? 'Numpad' : ($details['size'] == -1 ? 'Egyéb' : $details['size'].'%');
-	$product_template->set('size', $size);
+	$bt = $details["bluetooth"] == 1 ? "Igen" : "Nem";
+	$medkeys = $details["mediakeys"] == 1 ? "Igen" : "Nem";
+	$size = $details["size"] == 10 ? "Numpad" : ($details["size"] == -1 ? "Egyéb" : $details["size"]."%");
 
-	$template->set('body', $product_template->toString());
+	$context = [
+		"name" => $details["displayname"],
+		"slug" => $details["slug"],
+		"price" => number_format($details["price"], 0, ",", " "),
+		"description" => preg_replace("~(<br>){2,}~", "<br><br>", str_replace("\n", "<br>", $details["description"])),
+		"usb" => $details["usb"],
+		"bluetooth" => $bt,
+		"backlight" => $details["backlight"],
+		"mediakeys" => $medkeys,
+		"size" => $size
+	];
 
+	$template = new Template($_SERVER["DOCUMENT_ROOT"]."/templates/product.html", $context);
 	$template->render();
 	
-
 ?>

@@ -1,28 +1,72 @@
 <?php
-	class Template
-	{
+	class Template {
+		private $content;
 		private $template;
-		private $assigned = array();
+		private $context;
+		public $blocks;
 
-		function __construct($template) {
-			$this->template = file_get_contents($template);
-			$this->set("navbar", file_get_contents($_SERVER['DOCUMENT_ROOT']."/templates/navbar.html"));
-		}
-
-		function set($key, $value) {
-			$this->assigned[$key] = $value;
-		}
-
-		function toString() {
-			foreach ($this->assigned as $key => $value) {
-				$key = "/{{\s*".$key."\s*}}/i";
-				$this->template = preg_replace($key, $value, $this->template);
+		function __construct($template_file, $context = array()) {		
+			$this->content = file_get_contents($template_file);
+			if($context) {
+				$this->context = $context;
 			}
-			return $this->template;
+			if(preg_match("/^{% extends '(?<template>.*)' %}/", $this->content, $base)) {
+				$this->template = new Template($_SERVER['DOCUMENT_ROOT']."/".$base['template'], $context);
+				$this->blocks = $this->template->blocks;
+			}
+			else {
+				$this->template = $this;
+			}
+
+			preg_match_all("/{% block (?<name>\w+) %}(?<content>.*){% endblock (\k'name') %}/sU", $this->content, $blocks, PREG_SET_ORDER);
+			foreach($blocks as $block) {
+				$this->blocks[$block['name']] = $block['content'];
+			}
+		}
+
+		function __toString()
+		{
+			$page = $this->template->raw_template();
+
+			if ($this->blocks) {
+				foreach($this->blocks as $name => $content) {
+					$page = preg_replace(
+						"/{% block ".$name." %}(.*){% endblock ".$name." %}/s",
+						$content,
+						$page
+					);
+				}
+			}
+
+			if($this->context) {
+				foreach($this->context as $key=>$value) {
+					$page = preg_replace(
+						"/{{\s*(".$key.")\s*}}/",
+						$value,
+						$page
+					);
+				}
+			}
+			
+			preg_match_all(
+				"/{% include '(?<included>.*)' %}/",
+				$page,
+				$includes,
+				PREG_SET_ORDER
+			);
+			foreach($includes as $include) {
+				$page = str_replace($include[0], file_get_contents($_SERVER['DOCUMENT_ROOT']."/".$include['included']), $page);
+			}
+
+			return $page;
+		}
+
+		function raw_template() {
+			return $this->content;
 		}
 
 		function render() {
-			echo $this->toString();
+			echo strval($this);
 		}
 	}
 ?>
