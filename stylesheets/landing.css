@@ -1,9 +1,11 @@
+html {
+	background: url("/images/landing-bg.png") no-repeat center center fixed;
+	background-size: cover;
+}
 .container {
-	background:
-		linear-gradient(0, #29067E99, #29067E99),
-		url("/images/landing-bg.png") no-repeat center center fixed;
-	width: 100vw;
-	height: 100vh;
+	background: #29067E99;
+	width: 100%;
+	min-height: 100%;
 	position: absolute;
 	top:0;
 	text-align: center;
