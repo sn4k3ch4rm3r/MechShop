@@ -13,7 +13,8 @@
 	/* box-sizing: border-box; */
 	position: relative;
 	overflow: hidden;
-	font-family: 'Roboto Medium';
+	font-family: inherit;
+	font-weight: 500;
 	cursor: pointer;
 }
 

@@ -1,5 +1,23 @@
 @import 'colors.css';
 
+@font-face {
+	font-family: Roboto;
+	src: url('/fonts/Roboto-Light.ttf');
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: Roboto;
+	src: url('/fonts/Roboto-Regular.ttf');
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: Roboto;
+	src: url('/fonts/Roboto-Medium.ttf');
+	font-weight: 500;
+}
+
 body {
 	margin: 0;
 }
@@ -11,22 +29,22 @@ body {
 html{
 	background-color: var(--background);
 	color: var(--text);
-	font-family: Roboto;
+	font-family: Roboto, sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h3, h4, h5, h6 {
 	font-weight: normal;
 }
 
 h1 {
-	font-family: 'Roboto Light';
+	font-weight: 300;
 	font-size: 96px;
 	letter-spacing: -0.014em;
 	line-height: 112px;
 }
 
 h2 {
-	font-family: 'Roboto Light';
+	font-weight: 300;
 	font-size: 60px;
 	letter-spacing: -.008em;
 	line-height: 72px;
@@ -61,7 +79,7 @@ h6 {
 }
 
 .subtitle2 {
-	font-family: 'Roboto Medium';
+	font-weight: 500;
 	font-size: 14px;
 	letter-spacing: 0.007em;
 	line-height: 24px;

@@ -97,7 +97,7 @@ h2 {
 
 .accordion label {
 	padding: 14px 20px;
-	font-family: 'Roboto Medium';
+	font-weight: 500;
 	display: block;
 	cursor: pointer;
 	position: relative;
