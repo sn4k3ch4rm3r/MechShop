@@ -22,10 +22,6 @@ body {
 	margin: 0;
 }
 
-.preload * {
-	transition: none !important;
-}
-
 html{
 	background-color: var(--background);
 	color: var(--text);
