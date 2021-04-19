@@ -5,7 +5,7 @@
 	$cards = "";
 
 	$dbhandler = new DBHandler();
-	$products = $dbhandler->get_products();
+	$products = $dbhandler->get_products($_GET);
 
 	foreach($products as $product) {
 		$card = new Template($_SERVER['DOCUMENT_ROOT']."/templates/product-card.html", [

@@ -1,9 +1,5 @@
 // Filter elements
 const searchbar = document.getElementById("search");
-const connection = {
-	wired: document.getElementById("wired"),
-	bluetooth: document.getElementById("bluetooth"),
-}
 const size = {
 	100: document.getElementById("100"),
 	80: document.getElementById("80"),
@@ -15,6 +11,7 @@ const size = {
 }
 const extras = {
 	backlit: document.getElementById("backlit"),
+	bluetooth: document.getElementById("bluetooth"),
 	mediakeys: document.getElementById("mediakeys"),
 }
 
@@ -23,12 +20,6 @@ const qs = window.location.search;
 const qsParams = new URLSearchParams(qs);
 
 searchbar.value = qsParams.get("q");
-if (qsParams.has("connection")) {
-	let connection_type = qsParams.get("connection").split(",");
-	connection_type.forEach(type => {
-		connection[type].checked = true;
-	})
-}
 if (qsParams.has("size")) {
 	let sizes = qsParams.get("size").split(",");
 	sizes.forEach(s => {
@@ -47,13 +38,6 @@ function applyFilter() {
 	if (searchbar.value != "") {
 		params["q"] = searchbar.value;
 	}
-	let conn = [];
-	for(let [key, value] of Object.entries(connection)){
-		if (value.checked) {
-			conn.push(key);
-		}
-	}
-	if (conn.length > 0) params["connection"] = conn;
 	
 	let s = [];
 	for(let [key, value] of Object.entries(size)){
@@ -72,5 +56,5 @@ function applyFilter() {
 	if (extra.length > 0) params["extras"] = extra;
 	
 	let filterParams = new URLSearchParams(params).toString();
-	if(filterParams != "") window.location.search = filterParams;
+	if(filterParams != "" || qs != "") window.location.search = filterParams;
 }
