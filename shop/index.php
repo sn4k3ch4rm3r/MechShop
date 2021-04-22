@@ -1,4 +1,5 @@
 <?php
+	require_once($_SERVER['DOCUMENT_ROOT']."/helpers/sessioncheck.php");
 	require_once($_SERVER['DOCUMENT_ROOT']."/helpers/template.php");
 	require_once($_SERVER['DOCUMENT_ROOT']."/helpers/dbhandler.php");
 	
