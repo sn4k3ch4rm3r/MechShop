@@ -16,6 +16,9 @@
 		]);
 		$cards .= strval($card); 
 	}
+	if ($cards === "") {
+		$cards = "<h4>Nincs találat.<h4>";
+	}
 
 	$template = new Template($_SERVER['DOCUMENT_ROOT']."/templates/shop.html", ["products" => $cards]);
 	$template->render();

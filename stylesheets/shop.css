@@ -46,6 +46,12 @@
 	overflow-y: scroll;
 }
 
+.product-list h4 {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%)
+}
+
 .product {
 	border-radius: 5px;
 	background: var(--dark-accent);
