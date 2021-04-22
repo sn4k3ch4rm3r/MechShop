@@ -10,6 +10,13 @@
 	$medkeys = $details["mediakeys"] == 1 ? "Igen" : "Nem";
 	$size = $details["size"] == 10 ? "Numpad" : ($details["size"] == -1 ? "Egyéb" : $details["size"]."%");
 
+	$path = "/images/boards/".$details['slug']."/";
+	$images = '<div class="small-wrapper selected"><img src="'.$path.'main.png"/></div>';	
+	$image_files = glob($_SERVER["DOCUMENT_ROOT"].$path."[0-9]*.png");
+	foreach($image_files as $image) {
+		$images .= '<div class="small-wrapper"><img src="'.$path.basename($image).'"/></div>';
+	}
+
 	$context = [
 		"name" => $details["displayname"],
 		"slug" => $details["slug"],
@@ -19,7 +26,8 @@
 		"bluetooth" => $bt,
 		"backlight" => $details["backlight"],
 		"mediakeys" => $medkeys,
-		"size" => $size
+		"size" => $size,
+		"images" => $images
 	];
 
 	$template = new Template($_SERVER["DOCUMENT_ROOT"]."/templates/product.html", $context);

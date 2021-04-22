@@ -8,7 +8,10 @@
 {% block body %}
 	{% include 'templates/navbar.html' %}
 	<div class="content">
-		<div class="preview"><img src="/images/boards/{{slug}}/main.png"></div>
+		<div class="images">
+			<div class="main"><img src="/images/boards/{{slug}}/main.png"></div>
+			<div class="all-images">{{images}}</div>
+		</div>
 		<div class="info">
 			<h2>{{name}}</h2>
 			<h3>{{price}} Ft</h3>
