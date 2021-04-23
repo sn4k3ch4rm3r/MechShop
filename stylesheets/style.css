@@ -122,6 +122,12 @@ p, .body1 {
 	padding-right: 0;
 }
 
+@media screen and (max-width: 961px){
+	.header {
+		justify-content: center;
+	}
+}
+
 .header h3 {
 	margin: 0;
 }

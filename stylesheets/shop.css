@@ -18,6 +18,16 @@
 	box-sizing: border-box;
 	overflow: auto;
 }
+
+@media screen and (max-width: 961px){
+	.content {
+		grid-template-columns: auto;
+		grid-template-areas: "nav" "products";
+	}
+	.sidebar, .search, .icons{
+		display: none;
+	}
+}
 .sidebar h4 {
 	margin: 15px 0 0;
 }
