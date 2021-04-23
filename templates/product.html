@@ -9,7 +9,7 @@
 	{% include 'templates/navbar.html' %}
 	<div class="content">
 		<div class="images">
-			<div class="main"><img src="/images/boards/{{slug}}/main.png"></div>
+			<div class="main"><img src="/images/boards/{{slug}}/main.png" id="main-image"></div>
 			<div class="all-images">{{images}}</div>
 		</div>
 		<div class="info">
@@ -63,18 +63,5 @@
 			</div>
 		</div>
 	</div>
-	<script>
-		const amount = document.getElementById('amount');
-
-		function dec() {
-			if (amount.value>1) {
-				amount.value--;
-			}
-		}
-		function inc() {
-			if (amount.value < 100) {
-				amount.value ++;
-			}
-		}
-	</script>
+	<script src="/javascript/product.js"></script>
 {% endblock body %}
