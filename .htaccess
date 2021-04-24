@@ -1,5 +1,7 @@
 RewriteEngine on
-RewriteRule ^shop/product/(.*)$ shop/product.php?slug=$1
+
+RewriteRule ^shop\/?(\?.*)?$ /shop.php$1
+RewriteRule ^shop/product/(.*)$ /product.php?slug=$1
 
 ErrorDocument 400 /error.php
 ErrorDocument 403 /error.php
