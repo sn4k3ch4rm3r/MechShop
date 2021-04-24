@@ -1,0 +1,26 @@
+{% extends 'templates/base.html' %}
+
+{% block title %}
+	{{ code }}
+{% endblock title %}
+
+{% block imports %}
+	<style>
+		body {
+			text-align:center;
+		}
+		h1, h3 {
+			margin: 10px 0;
+		}
+		h1, .material-button {
+			margin-top: 25px;
+		}
+	</style>	
+{% endblock imports %}
+
+{% block body %}
+	<h1>{{ code }}</h1>
+	<h3>{{ message }}</h3>
+	<p>{{ info }}</p>
+	<button class="material-button" onclick="window.location='/'">Vissza a főoldalra</button>
+{% endblock body %}

@@ -1,2 +1,7 @@
 RewriteEngine on
 RewriteRule ^shop/product/(.*)$ shop/product.php?slug=$1
+
+ErrorDocument 400 /error.php
+ErrorDocument 403 /error.php
+ErrorDocument 404 /error.php
+ErrorDocument 500 /error.php

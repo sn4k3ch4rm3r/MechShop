@@ -1,6 +1,15 @@
 <?php
 	if ($_SERVER["REQUEST_METHOD"] === "POST") {
-		error_reporting(E_ALL ^ E_WARNING);
+		// error_reporting(E_ALL ^ E_WARNING);
+
+		$required_fields = array("name", "email", "phone", "postcode", "city", "address");
+		foreach($required_fields as $field) {
+			if(!isset($_POST[$field]) || empty($_POST[$field])) {
+				http_response_code(400);
+				require_once($_SERVER["DOCUMENT_ROOT"]."/error.php");
+				exit;
+			}
+		}
 		session_start();
 
 		$_SESSION['name'] = $_POST["name"];
@@ -10,7 +19,7 @@
 		$_SESSION['city'] = $_POST["city"];
 		$_SESSION['address'] = $_POST["address"];
 
-		require_once($_SERVER['DOCUMENT_ROOT']."/helpers/sessioncheck.php");
+		// require_once($_SERVER['DOCUMENT_ROOT']."/helpers/sessioncheck.php");
 
 		header("Location: /shop/");
 	}
