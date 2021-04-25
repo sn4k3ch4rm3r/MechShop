@@ -24,7 +24,7 @@
 		grid-template-columns: auto;
 		grid-template-areas: "nav" "products";
 	}
-	.sidebar, .search, .icons{
+	.sidebar {
 		display: none;
 	}
 }

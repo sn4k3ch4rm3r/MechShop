@@ -126,6 +126,9 @@ p, .body1 {
 	.header {
 		justify-content: center;
 	}
+	.search, .icons{
+		display: none;
+	}
 }
 
 .header h3 {
