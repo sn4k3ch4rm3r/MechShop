@@ -149,28 +149,33 @@ p, .body1 {
 }
 
 .search .material-outlined-textfield {
-	width: 86%;
+	width: calc(100% - 50px);
 }
 
 .search .material-button {
-	width: 15%;
+	width: 60px;
 	height: 40px;
 	position: absolute;
 	right: 0;
 	top:15px;
 }
 
+.search .material-button img {
+	height: 100%;
+	pointer-events: none;
+}
+
 .search .material-outlined-textfield label {
 	background: var(--menus) !important;
 }
 
-.header img {
+.header .icons img {
 	height: 40px;
 	padding: 15px;
 	transition: all ease 0.3s;
 	cursor: pointer;
 }
 
-.header img:hover {
+.header .icons img:hover {
 	background-color: #fffa;
 }
