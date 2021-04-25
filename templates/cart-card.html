@@ -1,0 +1,22 @@
+<a class="card ripple">
+	<div class="img-wrapper"><img src="/images/boards/{{slug}}/main.png" alt="Title"></div>
+	<div class="text">
+		<h3 class="name">{{ name }}</h3>
+		<p class="description">{{ description }}</p>
+	</div>
+	<div class="info">
+		<div class="amount">
+			<h5>Mennyiség</h5>
+			<div class="number-picker">
+				<button type="button" class="ripple" onclick="dec()">-</button>
+				<input type="number" id="amount" class="amount-input" value="{{count}}" min=1 max=100>
+				<button type="button" class="ripple" onclick="inc()">+</button>
+			</div>
+		</div>
+		<div class="subtotal">
+			<h5>Összeg</h5>
+			<h4>{{ subtotal }} Ft</h4>
+		</div>
+	</div>
+	<button class="remove">✕</button>
+</a>
