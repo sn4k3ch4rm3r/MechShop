@@ -7,22 +7,24 @@
 {% endblock imports %}
 
 {% block body %}
+	{% include 'templates/navbar.html' %}
 	<div class="content">
-		{% include 'templates/navbar.html' %}
+		<h4 id="title">Kosár</h4>
 		<div class="cart-content">
-			<h4 id="title">Kosár</h4>
 			{{ cards }}
 		</div>
 
 		<footer>
-			<div class="items">
-				<div class="total">
-					<h5>Végösszeg</h5>
-					<h4>{{ total }} Ft</h4>
-				</div>
-				<div class="actions">
-					<button class="material-button" id="back">❮ Tovább válogatok</button>
-					<button class="material-button" id="buy">Vásárlás ❯</button>
+			<div class="outer">
+				<div class="items">
+					<div class="total">
+						<h5>Végösszeg</h5>
+						<h4>{{ total }} Ft</h4>
+					</div>
+					<div class="actions">
+						<button class="material-button" id="back">Vissza</button>
+						<button class="material-button" id="buy">Vásárlás</button>
+					</div>
 				</div>
 			</div>
 		</footer>

@@ -1,37 +1,39 @@
-html, body {
-	height: 100%;
+.content {
+	height: calc(100vh - 70px);
+	display: grid;
+	grid-template-rows: min-content auto min-content;
+	grid-template-areas: "title" "cards" "checkout";
+	overflow-y: auto;
 }
 
-.content {
-	display: grid;
-	grid-template-rows: 70px auto min-content;
-	grid-template-areas: "nav" "cards" "checkout";
-	overflow-y: auto;
-	height: 100%;
+#title {
+	margin: 25px 25px 0;
+	grid-area: title;
 }
 
 .cart-content {
 	padding: 25px;
-}
-
-#title {
-	margin: 0 0 15px;
+	grid-area: cards;
 }
 
 .card {
 	background: var(--dark-accent);
-	border-radius: 5px;
+	transition: all ease .3s;
+	filter: drop-shadow(0 3px 4px #0005);
+	overflow: hidden;
 	width: 100%;
 	height: 200px;
-	overflow: hidden;
-	filter: drop-shadow(0 3px 4px #0005);
-	cursor: pointer;
-	transition: all ease 0.3s;
+	border-radius: 5px;
+	margin-bottom: 15px;
 	position: relative;
 	display: grid;
-	grid-template-columns: 200px auto auto;
+	grid-template-columns: 200px auto 400px;
 	grid-template-areas: "image description info";
-	margin-bottom: 15px;
+}
+
+.card a {
+	color: var(--text);
+	text-decoration: none;
 }
 
 .img-wrapper, .description {
@@ -52,14 +54,21 @@ html, body {
 	top:50%;
 	transform: translateY(-50%);
 }
+
 .text {
 	padding: 15px;	
 	grid-area: description;
+	overflow: hidden;
+	width: 100%;
 }
 
 .text .name {
 	padding-bottom: 10px;
 	margin: 0;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 100%;
 }
 
 .description {
@@ -72,7 +81,6 @@ html, body {
 
 .info {
 	align-self: center;
-	padding: 0 25px;
 }
 
 .amount {
@@ -130,28 +138,46 @@ footer {
 	position: relative;
 	width: 100%;
 	bottom: 0;
-	padding: 25px 50px 25px;
+	padding: 25px;
 	box-sizing: border-box;
 	display: flex;
 	justify-content: flex-end;
 }
 
+.outer {
+	width: 400px;
+	position: relative;
+}
+
+.items {
+	width: min-content;
+	margin-left: 55px;
+}
+
 .total {
 	margin-bottom: 15px;
-	display: flex;
-	justify-content: space-between;
+	display: grid;
+	grid-template-columns: min-content auto;
+	grid-template-rows: auto auto;
 	align-items: baseline;
 }
 
 .total * {
 	margin: 0;
+	white-space: nowrap;
 }
 
 .total :first-child {
-	margin-right: 10px;
+	margin-right: 25px;
+	text-align: right;
+}
+
+.actions {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 5px;
 }
 
 #buy {
 	background: var(--secondary-accent);
-	margin-left: 2px;
 }

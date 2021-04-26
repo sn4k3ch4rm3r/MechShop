@@ -1,7 +1,11 @@
-<a class="card ripple">
-	<div class="img-wrapper"><img src="/images/boards/{{slug}}/main.png" alt="Title"></div>
+<div class="card">
+	<a title="{{name}}" href="/shop/product/{{slug}}">
+		<div class="img-wrapper"><img src="/images/boards/{{slug}}/main.png" alt="Title"></div>
+	</a>
 	<div class="text">
-		<h3 class="name">{{ name }}</h3>
+		<a title="{{name}}" href="/shop/product/{{slug}}">
+			<h3 class="name">{{ name }}</h3></a>
+		</a>
 		<p class="description">{{ description }}</p>
 	</div>
 	<div class="info">
@@ -19,4 +23,4 @@
 		</div>
 	</div>
 	<button class="remove">✕</button>
-</a>
+</div>
