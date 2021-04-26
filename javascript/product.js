@@ -26,3 +26,31 @@ images.forEach(image => {
 		}
 	});
 });
+
+
+document.addEventListener("submit", (e) => {
+	const form = e.target;
+	fetch(
+		form.action, 
+		{
+			method: form.method,
+			body: new FormData(form),
+		}
+	)
+	.then(resp => resp.text())
+	.then(resp => {
+		if(resp === "success") {
+			const feedback = document.getElementById("feedback");
+			feedback.classList.remove("hidden");
+			const success = feedback.childNodes[1];
+			success.focus();
+			success.addEventListener("blur", e => {
+				console.log(e.target.parentNode);
+				if(!e.currentTarget.contains(e.relatedTarget))
+					feedback.classList.add("hidden");
+			});
+		}
+	});
+
+	e.preventDefault();
+});

@@ -2,6 +2,12 @@
 	require_once($_SERVER['DOCUMENT_ROOT']."/helpers/sessioncheck.php");
 	require_once($_SERVER["DOCUMENT_ROOT"]."/helpers/template.php");
 	require_once($_SERVER["DOCUMENT_ROOT"]."/helpers/dbhandler.php");
+
+	if ($_SERVER["REQUEST_METHOD"] === "POST") {
+		$_SESSION["cart"][$_GET["slug"]] = $_POST["amount"];
+		echo "success";
+		die;
+	}
 	
 	$dbhandler = new DBHandler();
 	$details = $dbhandler->product_details($_GET["slug"])[0];
@@ -17,7 +23,10 @@
 		$images .= '<div class="small-wrapper"><img src="'.$path.basename($image).'"/></div>';
 	}
 
+
+
 	$context = [
+		"id" => $details["id"],
 		"name" => $details["displayname"],
 		"slug" => $details["slug"],
 		"price" => number_format($details["price"], 0, ",", " "),
@@ -27,7 +36,8 @@
 		"backlight" => $details["backlight"],
 		"mediakeys" => $medkeys,
 		"size" => $size,
-		"images" => $images
+		"images" => $images,
+		"amount" => array_key_exists($details["slug"], $_SESSION["cart"]) ? $_SESSION["cart"][$details["slug"]] : 1,
 	];
 
 	$template = new Template($_SERVER["DOCUMENT_ROOT"]."/templates/product.html", $context);

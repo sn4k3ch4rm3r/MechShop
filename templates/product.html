@@ -15,14 +15,14 @@
 		<div class="info">
 			<h2>{{name}}</h2>
 			<h3>{{price}} Ft</h3>
-			<form>
+			<form method="POST">
 				<p class="overline">Mennyiség:</p>
 				<div class="number-picker">
 					<button type="button" class="ripple" onclick="dec()">-</button>
-					<input type="number" id="amount" class="amount-input" value="1" min=1 max=100>
+					<input type="number" id="amount" name="amount" class="amount-input" value="{{ amount }}" min=1 max=100>
 					<button type="button" class="ripple" onclick="inc()">+</button>
 				</div>
-				<button type="button" id="add-cart" class="material-button">Kosárba</button>
+				<button class="material-button">Kosárba</button>
 			</form>
 			<div class="accordion">
 				<div>
@@ -61,6 +61,13 @@
 					</div>
 				</div>
 			</div>
+		</div>
+	</div>
+	<div class="hidden" id="feedback">
+		<div id="success" tabindex=0>
+			<h3>Sikeresen hozzáadva a kosárhoz</h3>
+			<button class="material-button" onclick="window.location='/shop/'">Tovább válogatok</button>
+			<button class="material-button" onclick="window.location='/cart/'" id="open-cart">Kosár megnyitása</button>
 		</div>
 	</div>
 	<script src="/javascript/product.js"></script>

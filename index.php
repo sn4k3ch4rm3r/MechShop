@@ -1,7 +1,5 @@
 <?php
 	if ($_SERVER["REQUEST_METHOD"] === "POST") {
-		// error_reporting(E_ALL ^ E_WARNING);
-
 		$required_fields = array("name", "email", "phone", "postcode", "city", "address");
 		foreach($required_fields as $field) {
 			if(!isset($_POST[$field]) || empty($_POST[$field])) {
@@ -18,8 +16,7 @@
 		$_SESSION['postcode'] = $_POST["postcode"];
 		$_SESSION['city'] = $_POST["city"];
 		$_SESSION['address'] = $_POST["address"];
-
-		// require_once($_SERVER['DOCUMENT_ROOT']."/helpers/sessioncheck.php");
+		$_SESSION['cart'] = array();
 
 		header("Location: /shop/");
 	}
