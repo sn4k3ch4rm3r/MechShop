@@ -19,7 +19,7 @@
 				<div class="items">
 					<div class="total">
 						<h5>Végösszeg</h5>
-						<h4>{{ total }} Ft</h4>
+						<h4 id="total-price">{{ total }} Ft</h4>
 					</div>
 					<div class="actions">
 						<button class="material-button" id="back">Vissza</button>
@@ -30,3 +30,6 @@
 		</footer>
 	</div>
 {% endblock body %}
+{% block scripts %}
+	<script src="/javascript/cart.js"></script>
+{% endblock scripts %}

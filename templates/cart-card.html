@@ -11,16 +11,19 @@
 	<div class="info">
 		<div class="amount">
 			<h5>Mennyiség</h5>
-			<div class="number-picker">
-				<button type="button" class="ripple" onclick="dec()">-</button>
-				<input type="number" id="amount" class="amount-input" value="{{count}}" min=1 max=100>
-				<button type="button" class="ripple" onclick="inc()">+</button>
-			</div>
+			<form method="POST">
+				<div class="number-picker">
+						<button type="button" class="ripple decrease">-</button>
+						<input type="number" class="amount-input" name="amount" value="{{count}}" min=1 max=100>
+						<button type="button" class="ripple increase">+</button>
+				</div>
+				<input type="hidden" name="slug" value="{{slug}}">
+			</form>
 		</div>
 		<div class="subtotal">
 			<h5>Összeg</h5>
 			<h4>{{ subtotal }} Ft</h4>
 		</div>
 	</div>
-	<button class="remove">✕</button>
+	<button class="remove" onclick="remove('{{slug}}')">✕</button>
 </div>

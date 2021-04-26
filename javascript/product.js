@@ -1,16 +1,3 @@
-const amount = document.getElementById('amount');
-
-function dec() {
-	if (amount.value>1) {
-		amount.value--;
-	}
-}
-function inc() {
-	if (amount.value < 100) {
-		amount.value ++;
-	}
-}
-
 const images = document.querySelectorAll("div.small-wrapper");
 const mainImage = document.getElementById("main-image");
 images.forEach(image => {
