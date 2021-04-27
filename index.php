@@ -22,6 +22,11 @@
 	}
 	else {
 		require_once($_SERVER["DOCUMENT_ROOT"]."/helpers/template.php");
+		session_start();
+		if(isset($_SESSION["name"])){
+			header("Location: /shop/");
+			exit;
+		}
 		$template = new Template($_SERVER["DOCUMENT_ROOT"]."/templates/landing.html");
 		$template->render();
 	}
