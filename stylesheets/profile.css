@@ -1,0 +1,80 @@
+body {
+	display: flex;
+}
+
+.info {
+	position: sticky;
+	top: 0;
+	background: var(--menus);
+	height: 100vh;
+	width: min-content;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	padding: 25px;
+	box-sizing: border-box;
+}
+
+.pfp {
+	width: 200px;
+	height: 200px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--secondary-accent);
+	border-radius: 50%;
+}
+
+.pfp * {
+	margin:0;
+	font-size: 120px;
+}
+
+#name {
+	margin: 0;
+	white-space: nowrap;
+	text-align: center;
+}
+
+td:nth-child(2) {
+	padding-left: 25px;
+}
+
+td * {
+	margin: 0;
+	white-space: nowrap;
+}
+
+.material-button {
+	margin-top: 5px;
+	width: 100%;
+}
+
+hr{
+	width: 100%;
+	border:none;
+	border-top: 1px solid var(--input-border);
+}
+
+.history {
+	padding: 25px;
+	width: 100%;
+}
+
+.history h4 {
+	margin: 0 0 25px
+}
+
+.card {
+	border-radius: 5px;
+	background: var(--dark-accent);
+	padding: 10px;
+	display: flex;
+	justify-content: space-between;
+	cursor: pointer;
+	margin-bottom: 15px;
+}
+
+.card * {
+	margin: 0;
+}

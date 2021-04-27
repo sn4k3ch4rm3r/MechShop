@@ -1,0 +1,37 @@
+{% extends 'templates/base.html' %}
+
+{% block title %}Profil{% endblock title %}
+
+{% block imports %}
+	<link rel="stylesheet" href="/stylesheets/profile.css">
+{% endblock imports %}
+
+{% block body %}
+	<div class="info">
+		<div class="pfp">
+			<h1>{{letter}}</h1>
+		</div>
+		<h2 id="name">{{name}}</h2>
+		<hr>
+		<table>
+			<tr>
+				<td><h6>Email:</h6></td>
+				<td><h6>{{email}}</h6></td>
+			</tr>
+			<tr>
+				<td><h6>Telefon:</h6></td>
+				<td><h6>{{phone}}</h6></td>
+			</tr>
+			<tr>
+				<td><h6>Lakcím:</h6></td>
+				<td><h6>{{postcode}} {{city}}, {{address}}</h6></td>
+			</tr>
+		</table>
+		<hr>
+		<button class="material-button">Kijelentkezés</button>
+	</div>
+	<div class="history">
+		<h4>Korábbi rendelések</h4>
+		{{cards}}
+	</div>
+{% endblock body %}
