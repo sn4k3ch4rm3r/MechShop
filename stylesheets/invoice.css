@@ -1,0 +1,80 @@
+body {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+h2 {
+	margin: 15px 0;
+}
+
+.invoice {
+	background-color: white;
+	color: black;
+	width: 210mm;
+	padding: 15mm 20mm;
+	box-sizing: border-box;
+}
+
+.invoice * {
+	margin: 0;
+}
+
+.inline {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+.inline {
+	margin-bottom: 5mm;
+}
+
+.title {
+	font-family: 'Roboto Medium';
+}
+
+#szamla, #date{
+	color: #757575;
+}
+
+.bold {
+	font-family: 'Roboto Medium';
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td, th {
+	border: 1px solid black;
+	text-align: center;
+	padding: 2mm 3mm;
+}
+
+td:nth-child(2) {
+	text-align: left;
+}
+
+th {
+	text-transform: uppercase;
+}
+
+#product {
+	width: 100%;
+}
+
+#total {
+	border: none;
+	text-align: right;
+}
+
+#total-amount {
+	text-align: center;
+}
+
+.material-button {
+	margin-top: 15px;
+	width: 210mm;
+}

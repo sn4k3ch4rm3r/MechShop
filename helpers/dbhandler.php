@@ -87,6 +87,35 @@
 			);
 		}
 
+		function get_order($id) {
+			$details = $this->result_to_array(
+				$this->conn->query("
+					SELECT * FROM orders WHERE id = ".$id
+				)
+			);
+
+			if(sizeof($details) === 0) {
+				http_response_code(404);
+				include("error.php");
+				exit;
+			}
+
+			$items = $this->result_to_array(
+				$this->conn->query("
+					SELECT orderitems.amount, products.displayname, products.price, products.price * orderitems.amount AS subtotal
+					FROM ((orders
+					INNER JOIN orderitems ON orders.id = orderitems.orderid)
+					INNER JOIN products ON orderitems.productid = products.slug)
+					WHERE orders.id = ".$id
+				)
+			);
+
+			return array(
+				"details" => $details[0],
+				"items" => $items,
+			);
+		}
+
 		function result_to_array($result) {
 			$array = array();
 			while ($row = $result->fetch_assoc()) {

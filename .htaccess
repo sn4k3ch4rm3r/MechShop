@@ -5,6 +5,7 @@ RewriteRule ^shop/product/(.*)$ /product.php?slug=$1
 RewriteRule ^cart\/?$ /cart.php
 RewriteRule ^profile\/?$ /profile.php
 RewriteRule ^profile\/logout\/?$ /profile.php?action=logout
+RewriteRule ^invoice\/(\d*)$ /invoice.php?id=$1
 
 ErrorDocument 400 /error.php
 ErrorDocument 403 /error.php
