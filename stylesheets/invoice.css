@@ -24,9 +24,6 @@ h2 {
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-end;
-}
-
-.inline {
 	margin-bottom: 5mm;
 }
 
