@@ -7,9 +7,13 @@
 	unset($context["cart"]);
 	$context["letter"] = $_SESSION["fullname"][0];
 
+	$dbhandler = new DBHandler();
+
+	$history = $dbhandler->get_history($_SESSION["email"]);
 	$cards = "";
-	for ($i=0; $i < 10; $i++) { 
-		$card = new Template($_SERVER["DOCUMENT_ROOT"]."/templates/history-card.html");
+	foreach($history as $order) {
+		$order["total"] = number_format($order["total"], 0, ",", " ");
+		$card = new Template($_SERVER["DOCUMENT_ROOT"]."/templates/history-card.html", $order);
 		$cards .= $card;
 	}
 	$context["cards"] = $cards;

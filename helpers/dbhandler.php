@@ -68,6 +68,19 @@
 			return $orderid;
 		}
 
+		function get_history($email) {
+			return $this->result_to_array(
+				$this->conn->query("
+					SELECT orders.id, date, SUM(orderitems.amount) AS count, SUM(products.price * orderitems.amount) AS total
+					FROM ((orders
+					INNER JOIN orderitems ON orders.id = orderitems.orderid)
+					INNER JOIN products ON orderitems.productid = products.slug)
+					WHERE email = '".$email."'
+					GROUP BY orders.id"
+				)
+			);
+		}
+
 		function result_to_array($result) {
 			$array = array();
 			while ($row = $result->fetch_assoc()) {
