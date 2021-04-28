@@ -22,8 +22,11 @@
 						<h4 id="total-price">{{ total }} Ft</h4>
 					</div>
 					<div class="actions">
-						<button class="material-button" id="back">Vissza</button>
-						<button class="material-button" id="buy">Vásárlás</button>
+						<button class="material-button" id="back" onclick="window.location = '/shop/'">Vissza</button>
+						<form method="POST">
+							<input type="hidden" name="action" value="checkout">
+							<button class="material-button" id="buy">Vásárlás</button>
+						</form>
 					</div>
 				</div>
 			</div>

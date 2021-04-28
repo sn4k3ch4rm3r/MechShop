@@ -10,7 +10,7 @@
 		}
 		session_start();
 
-		$_SESSION['name'] = $_POST["name"];
+		$_SESSION['fullname'] = $_POST["name"];
 		$_SESSION['email'] = $_POST["email"];
 		$_SESSION['phone'] = $_POST["phone"];
 		$_SESSION['postcode'] = $_POST["postcode"];

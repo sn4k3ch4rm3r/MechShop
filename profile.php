@@ -5,7 +5,7 @@
 
 	$context = $_SESSION;
 	unset($context["cart"]);
-	$context["letter"] = $_SESSION["name"][0];
+	$context["letter"] = $_SESSION["fullname"][0];
 
 	$cards = "";
 	for ($i=0; $i < 10; $i++) { 

@@ -1,9 +1,10 @@
+DROP DATABASE IF EXISTS `mechshop`;
+
 CREATE DATABASE mechshop;
 USE mechshop;
 
 CREATE TABLE products (
-	`id` INT PRIMARY KEY AUTO_INCREMENT,
-	`slug` TEXT NOT NULL,
+	`slug` VARCHAR(100) PRIMARY KEY,
 	`displayname` TEXT NOT NULL, 
 	`price` INT NOT NULL, 
 	`size` INT NOT NULL, 
@@ -18,17 +19,20 @@ CREATE TABLE products (
 CREATE TABLE orders (
 	`id` INT PRIMARY KEY AUTO_INCREMENT,
 	`email` VARCHAR(320) NOT NULL,
+	`postcode` INT NOT NULL,
+	`city` TEXT NOT NULL,
 	`address` TEXT NOT NULL,
 	`fullname` TEXT NOT NULL,
-	`phone` TEXT NOT NULL
+	`phone` TEXT NOT NULL,
+	`date` DATE NOT NULL
 );
 
 CREATE TABLE orderitems (
 	`orderid` INT NOT NULL,
-	`productid` INT NOT NULL, 
+	`productid` VARCHAR(100) NOT NULL, 
 	`amount` INT NOT NULL,
 	FOREIGN KEY (`orderid`) REFERENCES orders(`id`),
-	FOREIGN KEY (`productid`) REFERENCES products(`id`)
+	FOREIGN KEY (`productid`) REFERENCES products(`slug`)
 );
 
 INSERT INTO products (slug, displayname, price, size, description, usb, bluetooth, rf, backlight, mediakeys) VALUES ('ducky-one-2-mini-v2-rgb', 'Ducky One 2 Mini v2 RGB', '29900', 60, 'Featuring PBT double shot seamless keycaps with side laser engraving technique.  Smaller size, but no functions sacrificed. Supports Ducky Macro V2.0 and Mouse control function. The new bezel design shares a similar sleek frame as it�s predecessor, but the One 2 Mini incorporates dual colors on the bezel to match all varieties of keycap  colorways.\n\nTo stand out in the crowd we chose to use PBT seamless double-shot keycaps. It is designed and engineered in a way to provide the user with the best durability and typing experience. Varieties of colorways available.\n\nThe One 2 can be adjusted into three placement angles, optimizing typing comfortability and legend visibility.\n\nDetachable USB Type-C cable provides convenience to users. We use USB HID with the highest frequency of 1000Hz polling rate, meaning the keyboard is sending its input signal(s) to your PC 1000 times per second. This feature minimizes the delay of when the keys are being pressed and signal received by the computer.\n\nEvery Ducky One 2 Mini comes with 10 additional PBT Double-Shot Colorful keycaps (Random color)', 'USB-C', False, False, 'RGB', True);

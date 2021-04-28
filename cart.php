@@ -3,9 +3,10 @@
 	require_once($_SERVER["DOCUMENT_ROOT"]."/helpers/template.php");
 	require_once($_SERVER["DOCUMENT_ROOT"]."/helpers/dbhandler.php");
 
-	function getCards() {
-		$dbhandler = new DBHandler();
+	$dbhandler = new DBHandler();
 
+	function getCards() {
+		global $dbhandler;
 		$cards = "";
 		$total = 0;
 		foreach (array_keys($_SESSION["cart"]) as $item) {
@@ -26,8 +27,21 @@
 	}
 
 	if($_SERVER["REQUEST_METHOD"] === "POST") {
-		if(isset($_POST["action"]) && $_POST["action"] === "remove") {
-			unset($_SESSION["cart"][$_POST["slug"]]);
+		if(isset($_POST["action"])) {
+			if($_POST["action"] === "remove") {
+				unset($_SESSION["cart"][$_POST["slug"]]);
+			}
+			else if ($_POST["action"] === "checkout") {
+				if(sizeof($_SESSION["cart"]) !== 0) {
+					$orderid = $dbhandler->create_order($_SESSION);
+					$_SESSION["cart"] = array();
+					header("Location: /invoice/".$orderid);
+				}
+				else {
+					header("Location: /cart/");
+				}
+				exit;
+			}
 		}
 		else if(isset($_POST["amount"])) {
 			$amount = $_POST["amount"];

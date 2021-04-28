@@ -44,6 +44,30 @@
 			return $this->result_to_array($this->conn->query("SELECT * FROM products WHERE slug='$slug'"));
 		}
 
+		function create_order($details) {
+			$cart = $details["cart"];
+			unset($details["cart"]);
+
+			$details["date"] = date("Y-m-d");
+
+			$keys = array();
+			$values = array();
+			foreach($details as $key => $value) {
+				array_push($keys, $key);	
+				array_push($values, $this->conn->real_escape_string($value));
+			}
+			$keys = implode("`, `", $keys);
+			$values = implode("', '", $values);
+			$this->conn->query("INSERT INTO `orders` (`".$keys."`) VALUES ('". $values ."')");
+			echo $this->conn->error;
+			$orderid = $this->conn->insert_id;
+			foreach($cart as $slug => $amount) {
+				$this->conn->query("INSERT INTO `orderitems` (`orderid`, `productid`, `amount`) VALUES (".$orderid.", '".$slug."', ".$amount.")");
+			}
+			$this->conn->close();
+			return $orderid;
+		}
+
 		function result_to_array($result) {
 			$array = array();
 			while ($row = $result->fetch_assoc()) {

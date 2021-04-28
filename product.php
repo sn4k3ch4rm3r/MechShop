@@ -26,7 +26,6 @@
 
 
 	$context = [
-		"id" => $details["id"],
 		"name" => $details["displayname"],
 		"slug" => $details["slug"],
 		"price" => number_format($details["price"], 0, ",", " "),

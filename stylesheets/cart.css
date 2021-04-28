@@ -180,4 +180,5 @@ footer {
 
 #buy {
 	background: var(--secondary-accent);
+	width: 100%;
 }
