@@ -41,7 +41,13 @@
 		}
 
 		function product_details($slug) {
-			return $this->result_to_array($this->conn->query("SELECT * FROM products WHERE slug='$slug'"));
+			$res = $this->conn->query("SELECT * FROM products WHERE slug='$slug'");
+			if($res->num_rows == 0) {
+				http_response_code(404);
+				include("error.php");
+				exit;
+			}
+			return $this->result_to_array($res);
 		}
 
 		function create_order($details) {
