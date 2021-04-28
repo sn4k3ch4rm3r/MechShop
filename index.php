@@ -23,7 +23,7 @@
 	else {
 		require_once($_SERVER["DOCUMENT_ROOT"]."/helpers/template.php");
 		session_start();
-		if(isset($_SESSION["name"])){
+		if(isset($_SESSION["fullname"])){
 			header("Location: /shop/");
 			exit;
 		}

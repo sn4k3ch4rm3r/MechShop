@@ -3,7 +3,8 @@ RewriteEngine on
 RewriteRule ^shop\/?(\?.*)?$ /shop.php$1
 RewriteRule ^shop/product/(.*)$ /product.php?slug=$1
 RewriteRule ^cart\/?$ /cart.php
-rewriteRule ^profile\/?$ /profile.php
+RewriteRule ^profile\/?$ /profile.php
+RewriteRule ^profile\/logout\/?$ /profile.php?action=logout
 
 ErrorDocument 400 /error.php
 ErrorDocument 403 /error.php

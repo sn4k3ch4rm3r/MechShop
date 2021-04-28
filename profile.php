@@ -3,6 +3,12 @@
 	require_once($_SERVER["DOCUMENT_ROOT"]."/helpers/template.php");
 	require_once($_SERVER["DOCUMENT_ROOT"]."/helpers/dbhandler.php");
 
+	if(isset($_GET["action"]) && $_GET["action"] === "logout") {
+		session_destroy();
+		header("Location: /");
+		exit;
+	}
+
 	$context = $_SESSION;
 	unset($context["cart"]);
 	$context["letter"] = $_SESSION["fullname"][0];
