@@ -11,7 +11,13 @@ function remove(slug) {
 		}
 	)
 	.then(resp => resp.text())
-	.then(renderResponse);
+	.then(resp => {
+		let response = JSON.parse(resp);
+		document.querySelector(".cart-content").innerHTML = response.cards;
+		document.getElementById("total-price").innerHTML = response.total + " Ft";
+		setupNumberPickers();
+		setupInputs();
+	});
 }
 
 function setupInputs() {
@@ -25,6 +31,13 @@ function setupInputs() {
 	buttons.forEach(button => {
 		button.addEventListener("click", e => update(e.target.form));
 	});
+
+	const forms = document.querySelectorAll(".card form");
+	forms.forEach(form => {
+		form.addEventListener("submit", e => {
+			e.preventDefault();
+		})
+	});
 }
 
 function update(form) {
@@ -36,15 +49,12 @@ function update(form) {
 		}
 	)
 	.then(resp => resp.text())
-	.then(renderResponse);
-}
-
-function renderResponse(resp) {
-	let response = JSON.parse(resp);
-	document.querySelector(".cart-content").innerHTML = response.cards;
-	document.getElementById("total-price").innerHTML = response.total + " Ft";
-	setupNumberPickers();
-	setupInputs();
+	.then(resp => {
+		response = JSON.parse(resp);
+		document.getElementById("total-price").innerHTML = response.total + " Ft";
+		form.getElementsByClassName("amount-input")[0].value = response.amount;
+		form.parentNode.parentNode.getElementsByClassName("subtotal")[0].getElementsByTagName("h4")[0].innerHTML = response.subtotal + " Ft";
+	});
 }
 
 setupInputs();

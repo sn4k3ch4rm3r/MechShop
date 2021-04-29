@@ -30,6 +30,7 @@
 		if(isset($_POST["action"])) {
 			if($_POST["action"] === "remove") {
 				unset($_SESSION["cart"][$_POST["slug"]]);
+				echo json_encode(getCards());
 			}
 			else if ($_POST["action"] === "checkout") {
 				if(sizeof($_SESSION["cart"]) !== 0) {
@@ -40,17 +41,26 @@
 				else {
 					header("Location: /cart/");
 				}
-				exit;
 			}
+			exit;
 		}
 		else if(isset($_POST["amount"])) {
 			$amount = $_POST["amount"];
+			
 			if($amount < 1) $amount = 1;
 			else if($amount > 100) $amount = 100;
+			
 			$_SESSION["cart"][$_POST["slug"]] = $amount;
+			$details = $dbhandler->product_details($_POST["slug"])[0];
+			$cards = getCards();
+			$response = array(
+				"amount" => $amount,
+				"subtotal" => number_format($details["price"] * $amount, 0, ",", " "),
+				"total" => $cards["total"],
+			);
+			echo json_encode($response);
+			exit;
 		}
-		echo json_encode(getCards());
-		exit;
 	}
 	
 	$template = new Template($_SERVER["DOCUMENT_ROOT"]."/templates/cart.html", getCards());
