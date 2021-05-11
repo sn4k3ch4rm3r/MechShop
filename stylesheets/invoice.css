@@ -27,16 +27,12 @@ h2 {
 	margin-bottom: 5mm;
 }
 
-.title {
-	font-family: 'Roboto Medium';
+.title, .bold {
+	font-weight: 500;
 }
 
 #szamla, #date{
 	color: #757575;
-}
-
-.bold {
-	font-family: 'Roboto Medium';
 }
 
 table {

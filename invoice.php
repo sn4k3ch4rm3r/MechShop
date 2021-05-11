@@ -30,7 +30,7 @@
 	foreach($order["items"] as $item) {
 		$context["rows"] .= "
 			<tr>
-				<td>".$item["amount"]."</td>
+				<td>".$item["amount"]." db</td>
 				<td>".$item["displayname"]."</td>
 				<td>".number_format($item["price"], 0, ",", " ")." Ft</td>
 				<td>".number_format($item["subtotal"], 0, ",", " ")." Ft</td>
