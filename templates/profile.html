@@ -7,31 +7,34 @@
 {% endblock imports %}
 
 {% block body %}
-	<div class="info">
-		<div class="pfp">
-			<h1>{{letter}}</h1>
+	{% include 'templates/navbar.html' %}
+	<div class="container">
+		<div class="info">
+			<div class="pfp">
+				<h1>{{letter}}</h1>
+			</div>
+			<h2 id="name">{{fullname}}</h2>
+			<hr>
+			<table>
+				<tr>
+					<td><h6>Email:</h6></td>
+					<td><h6>{{email}}</h6></td>
+				</tr>
+				<tr>
+					<td><h6>Telefon:</h6></td>
+					<td><h6>{{phone}}</h6></td>
+				</tr>
+				<tr>
+					<td><h6>Lakcím:</h6></td>
+					<td><h6>{{postcode}} {{city}}, {{address}}</h6></td>
+				</tr>
+			</table>
+			<hr>
+			<button class="material-button" onclick="window.location='/profile/logout'">Kijelentkezés</button>
 		</div>
-		<h2 id="name">{{fullname}}</h2>
-		<hr>
-		<table>
-			<tr>
-				<td><h6>Email:</h6></td>
-				<td><h6>{{email}}</h6></td>
-			</tr>
-			<tr>
-				<td><h6>Telefon:</h6></td>
-				<td><h6>{{phone}}</h6></td>
-			</tr>
-			<tr>
-				<td><h6>Lakcím:</h6></td>
-				<td><h6>{{postcode}} {{city}}, {{address}}</h6></td>
-			</tr>
-		</table>
-		<hr>
-		<button class="material-button" onclick="window.location='/profile/logout'">Kijelentkezés</button>
-	</div>
-	<div class="history">
-		<h4>Korábbi rendelések</h4>
-		{{cards}}
+		<div class="history">
+			<h4>Korábbi rendelések</h4>
+			{{cards}}
+		</div>
 	</div>
 {% endblock body %}

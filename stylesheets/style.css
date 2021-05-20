@@ -160,7 +160,8 @@ p, .body1 {
 	height: 40px;
 	position: absolute;
 	right: 0;
-	top:15px;
+	top: 15px;
+	margin: 0;
 }
 
 .search .material-button img {
